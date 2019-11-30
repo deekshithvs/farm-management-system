@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+background-image: url("farm.jpg");
+background-repeat : no-repeat;
+background-size : cover;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus ,input[type=number]:focus{
+  background-color: rgb(201, 196, 196);
+  outline: none;
+}
+
+/* Set a style for all buttons */
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.9;
+  rotate: 10px;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+/*.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+*/
+/*.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}*/
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+<!-- <div class="container signin">
+    <p>Already Registered? <input type=button value="Back" onCLick="history.back()"></p>
+     </div> -->
+  <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+  <div class="modal-content">
+
+    <div class="container">
+      <form name="form"  method = "POST"  action = "http://localhost:5000/CreateProfile/{{userType}}/{{userEmail}}/{{firstName}}/1">      
+      <h1>Create Profile</h1>
+      <p>Please fill in the Details.</p>
+      <hr>
+      <div>
+        <!-- <p>
+          {{data[7]}}
+        </p> -->
+          <img src="/static/img/{{data[7]}}"  width="200px" height="200px"/>
+        </div>
+      <label for="email"><b>Email</b></label>
+      <input type="text" class="form-control" disabled required name="email"  value={{userEmail}} placeholder={{userEmail}}  >
+      
+      <label for="firstname"><b>First name</b></label>
+      <input type="text" required  name="firstName" disabled    value={{data[2]}} >
+      
+      <label for="lastname"><b>Last name</b></label>
+      <input type="text"  name="lastName" required   value={{data[3]}} >
+<!-- <input type="radio" value="placement" name="a">Placement &nbsp;
+<input type="radio" value="company" name="a">Company &nbsp; -->
+<!-- </br>
+</br>
+</br> -->
+      <label for="state"><b>State</b></label>
+      <input type="text"   required name="state" value={{data[4]}} >
+
+      <label for="district"><b>District</b></label>
+      <input type="text" placeholder="Enter District" name="district" required value={{data[8]}} placeholder={{data[8]}}>
+
+      <label for="city"><b>City</b></label>
+      <input type="text" placeholder="Enter City" name="city" required value={{data[9]}} placeholder={{data[9]}}>
+
+      <label for="village"><b>Village</b></label>
+      <input type="text" placeholder="Enter village" name="villageName" required value={{data[10]}} placeholder={{data[10]}}>
+      
+      <label for="pin"><b>Pincode</b></label> &nbsp;
+      <input type="number" name="pin" placeholder="Enter Pincode" maxlength="6" min="100000"  max="999999" required value={{data[5]}} placeholder={{data[5]}}>
+
+      <label for="number"><b>Phone number</b></label> &nbsp;
+      <input type="number" name="phoneNumber" placeholder="Enter Phonenumber"  minlength=10   min="6000000000" max="9999999999" required value={{data[6]}} placeholder={{data[6]}}>
+     
+      <label for="Photo"><b>Photo</b></label>
+      <input type="file" name="photo" value={{data[7]}}  placeholder="{{data[7]}}" >
+      
+<!--label for="c"><b>Contact No</b></label>
+      <input type="text" placeholder="Enter contact no" name="cno" required>
+
+<label for="o"><b>Objective</b></label>
+      <input type="text" placeholder="Enter objective" name="obj" required>
+
+<label for="e"><b>Education Qualification</b></label>
+      <input type="text" placeholder="Enter qualification" name="edq" required>
+
+      <label for="ex"><b>Experience</b></label>
+      <input type="text" placeholder="Enter Experience" name="exp" required>
+
+<label for="s"><b>Skill</b></label>
+      <input type="text" placeholder="Enter Skill" name="skill" required>
+
+      <label for="ach"><b>Achievement</b></label>
+      <input type="text" placeholder="Enter achievements" name="ach" required>
+
+<label for="pro"><b>Project Undertaken</b></label>
+      <input type="text" placeholder="Enter Projects" name="proj" required>
+ -->
+
+<!-- <label for="lang"><b>Communication Languages</b></label>
+      <input type="text" placeholder="Enter lang" name="lang" required>
+      
+      <label for="hob"><b>Hobbies and Interest</b></label>
+      <input type="text" placeholder="Enter hobbies" name="hob" required>
+
+      <label for="dpt"><b>Department</b></label>
+      <input type="text" placeholder="Enter Dpt" name="dpt" required>
+ -->
+        <div class="clearfix">
+        <input type="submit" class="button" value="submit" >
+        
+          <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
+       
+    </div>
+  </form>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

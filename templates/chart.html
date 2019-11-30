@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ANAlALYSIS</title>
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css" rel="stylesheet">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.10.0.min.css" rel="stylesheet" type="text/css">
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.10.0.min.js"></script>
+  </head>
+  <body>
+    <h1></h1>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="font-size: 20px;">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#"></a>
+	  
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  
+			  <h2 class="nav-link" >Farm Circle</h2>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="http://localhost:5000/home/{{type}}/{{consuid}}">Home</a>
+			</li>
+			<li class="nav-item">
+				<!-- <form method="POST" action="http://localhost:5000/home/{{type}}/{{id}}">
+			  <input type="button" class="nav-link"  value="profile">
+			  </form> -->
+			  <a class="nav-link" href="http://localhost:5000/profile/{{type}}/{{consuid}}">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="http://localhost:5000/logout">logout</a>
+			</li>
+		  </ul>
+		</div>
+	  </nav> 
+</div>
+<nav>
+    <!-- <form method="post" action ="http://localhost:5000/analysis/{{type}}/{{consuid}}/1" >
+		<ul>
+			<li class="drop">
+				<a href="#">FILTER</a>
+				<form method="post" action ="http://localhost:5000/analysis/{{type}}/{{consuid}}/1" >
+				<div class="dropdownContain">
+					<div class="dropOut">
+						<div class="triangle"></div>
+						<ul>
+                
+                  <li><option class="dropOut" value="Food_Crops"><strong>Food_Crops</strong></option></li>
+                  <option class="dropOut" value="Cash_Crops"><strong>Cash_Crops</strong></option>
+				  <option  class="dropOut" value="Plantation_Crops"><strong>Plantation_Crops</strong></option>
+				  <option  class="dropOut" value="Horticulture_crops"><strong>Horticulture_crops</strong></option>
+                </select>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+						</ul>
+					</div>
+        </div>
+        <ul>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </ul>
+			</li>
+    </ul>
+  </form> --> -->
+</nav>
+<br>
+<br>
+<br>
+    <div>
+      <center>
+      <!-- <form method="post" action ="http://localhost:5000/analysis/{{type}}/{{consuid}}/1" >
+        <select class="product" name="cropName">
+          <option value="pulses"><strong>Pulses</strong></option>
+          <option value="vegetables"><strong>Vegetables</strong></option>
+          <option value="cereals"><strong>Cerials</strong></option>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form> -->
+    </center>
+    </div>
+
+    
+         {{ the_div|safe }}
+      
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.js"></script>
+    {{ the_script|safe }}
+    <!-- cd <del>cd </del> -->
+    <style>
+        html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;} /* remember to define focus styles! */ :focus {outline: 0;} /* remember to highlight inserts somehow! */ins {text-decoration: none;}del {text-decoration: line-through;} /* tables still need 'cellspacing="0"' in the markup */ table {border-collapse: collapse;border-spacing: 0;}
+
+
+/*---------- BODY --------------------------------*/
+
+body {
+	text-align: center;
+	background: #e0e0e0;
+	padding-bottom: 200px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*---------- Wrapper --------------------*/
+
+nav {
+	width: 100%;
+	height: 80px;
+	background: #222;
+}
+
+ul {
+	text-align: center;
+}
+
+ul li {
+	font: 13px Verdana, 'Lucida Grande';
+	cursor: pointer;
+	-webkit-transition: padding .05s linear;
+	-moz-transition: padding .05s linear;
+	-ms-transition: padding .05s linear;
+	-o-transition: padding .05s linear;
+	transition: padding .05s linear;
+}
+ul li.drop {
+	position: relative;
+}
+ul > li {
+	display: inline-block;
+}
+ul li a {
+	line-height: 80px;
+	padding: 0 20px;
+	height: 80px;
+	color: #777;
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+ul li a:hover {
+	color: #eee;
+}
+
+.dropOut .triangle {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid white;
+	top: -8px;
+	left: 50%;
+	margin-left: -8px;
+}
+.dropdownContain {
+	width: 160px;
+	position: absolute;
+	z-index: 2;
+	left: 50%;
+	margin-left: -80px; /* half of width */
+	top: -400px;
+}
+.dropOut {
+	width: 160px;
+	background: white;
+	float: left;
+	position: relative;
+	margin-top: 0px;
+	opacity: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+
+.dropOut ul {
+	float: left;
+	padding: 10px 0;
+}
+.dropOut ul li {
+	text-align: left;
+	float: left;
+	width: 125px;
+	padding: 12px 0 10px 15px;
+	margin: 0px 10px;
+	color: #777;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: background .1s ease-out;
+	-moz-transition: background .1s ease-out;
+	-ms-transition: background .1s ease-out;
+	-o-transition: background .1s ease-out;
+	transition: background .1s ease-out;
+}
+
+.dropOut ul li:hover {
+	background: #f6f6f6;
+}
+
+ul li:hover a { color: white; }
+ul li:hover .dropdownContain { top: 65px; }
+ul li:hover .underline { border-bottom-color: #777; }
+ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
+    </style>
+
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/addons-pro/cards-extended.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+   <body>
+      <div>
+          <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+              <!-- Brand -->
+              <a class="navbar-brand" href="#"></a>
+            
+              <!-- Toggler/collapsibe Button -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <!-- Navbar links -->
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Farm Circle</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:5000//{{userType}}//{{userEmail}}//Profile">Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </nav> 
+      </div>
+      <br>
+      <br><br><br>
+      <div class="cards-list">
+          <a href="http://localhost:5000/AddCrops/{{userType[0]}}/{{id}}">
+          <div class="card 1">
+            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+            <div class="card_title title-white">
+              <p>ADD PRODUCT</p>
+            </div>
+          </div>
+        </a>
+          <a href="www.google.com">
+            <div class="card 2">
+            <div class="card_image">
+              <img src="https://cdn.blackmilkclothing.com/media/wysiwyg/Wallpapers/PhoneWallpapers_FloralCoral.jpg" />
+              </div>
+            <div class="card_title title-white">
+              <p>UPDATE PRODUCT
+              </p>
+            </div>
+          </div>
+        </a>
+        <br><br><br>
+        <a href="http://localhost:5000/analysis/{{userType[0]}}/{{id}}/0">
+          <div class="card 3">
+            <div class="card_image">
+              <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+            </div>
+            <div class="card_title">
+              <p>ANALYSIS</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="http://localhost:5000/displayCrops/{{userType[0]}}/{{id}}">
+            <div class="card 4">
+            <div class="card_image">
+              <img src= "https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+              </div>
+            <div class="card_title title-black">
+              <p>MY ORDERS</p>
+            </div>
+            </div>
+        </a>
+        <a href="http://localhost:5000/myrequests/{{id}}">
+            <div class="card 4">
+            <div class="card_image">
+              <img src="https://images.pexels.com/photos/1094544/pexels-photo-1094544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+              </div>
+            <div class="card_title title-black">
+              <p>REQUESTS</p>
+            </div>
+            </div>
+        </a>
+        <!-- <a href="www.google.com">
+            <div class="card 4">
+            <div class="card_image">
+              <img src="https://images.pexels.com/photos/1094544/pexels-photo-1094544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+              </div>
+            <div class="card_title title-black">
+              <p>INBOX</p>
+            </div>
+            </div>
+        </a> -->
+          </div>
+   </body>
+
+  <style>
+      .cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+  </style>
+
+  </html>

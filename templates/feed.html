@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML Feedback Form With Captcha - reusable form</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+      <style>
+input[type='text'],input[type='email'],
+textarea 
+{
+    font-family: Arial, FontAwesome;
+}
+</style>
+<style>
+#orig_article_block {
+position:fixed;
+left:0px;
+bottom:0px;
+height:60px;
+width:100%;
+background:#222;
+color:#fff;
+padding: 10px;
+}
+#orig_article_block a
+{
+color:#fff;
+text-decoration: underline;
+}
+
+/* IE 6 */
+* html #orig_article_block {
+position:absolute;
+top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+</style>
+</head>
+<body>
+	  <div class="container">
+        <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Feedback</h2>
+        <p>
+            Please provide your feedback below:
+        </p>
+        <form role="form" method="POST" id="reused_form" action="http://localhost:5000/feedback/{{id}}/{{type}}/{{item}}">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                <label>How do you rate overall quality of the crop?</label>
+                <p>
+                    <label class="radio-inline">
+                    <input type="radio" name="experience" id="radio_experience" value="bad" >
+                    <i class="fa fa-frown-o fa-2x" aria-hidden="true"></i> Bad
+                    </label>
+
+                    <label class="radio-inline">
+                    <input type="radio" name="experience" id="radio_experience" value="average" >
+                    <i class="fa fa-meh-o fa-2x" aria-hidden="true"></i> Just OK
+                    </label>
+
+                    <label class="radio-inline">
+                    <input type="radio" name="experience" id="radio_experience" value="good" >
+                    <i class="fa fa-smile-o fa-2x" aria-hidden="true"></i> Good
+                    </label>
+                </p>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="comments">
+                        Comments:</label>
+                    <textarea class="form-control" type="textarea" id="comments" 
+                    placeholder="&#xf040;" name="comments" maxlength="6000" rows="7"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label for="name">
+                        Your Name:</label>
+                    <input type="text" class="form-control" placeholder="&#xf007;" id="name" name="name" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label for="email">
+                        Email:</label>
+                    <input type="email" class="form-control" placeholder="&#xf003;" id="email" name="email" required>
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <button type="submit" class="btn btn-lg btn-warning pull-right" >
+                    <i class="fa fa-send-o " aria-hidden="true"></i> Send &rarr;</button>
+                </div>
+            </div>
+
+        </form>
+
+</body>
+</html>
